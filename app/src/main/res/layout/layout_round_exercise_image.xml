@@ -19,7 +19,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/breakreminder_0" />
+            app:srcCompat="@drawable/image_placeholder" />
 
     <!-- </android.support.v7.widget.CardView> -->
 </LinearLayout>

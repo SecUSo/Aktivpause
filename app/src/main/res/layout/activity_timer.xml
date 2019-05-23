@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="org.secuso.privacyfriendlypausinghealthily.activities.EditExerciseSetActivity">
+        tools:context="org.secuso.aktivpause.activities.EditExerciseSetActivity">
 
         <include layout="@layout/layout_toolbar"/>
 
@@ -23,7 +23,7 @@
             android:layout_margin="0dp"
             android:padding="0dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context="org.secuso.privacyfriendlypausinghealthily.activities.TimerActivity">
+            tools:context="org.secuso.aktivpause.activities.TimerActivity">
 
             <android.support.v7.widget.AppCompatSpinner
                 android:id="@+id/spinner_choose_exercise_set"

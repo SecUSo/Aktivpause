@@ -5,7 +5,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.secuso.privacyfriendlypausinghealthily.activities.ExerciseActivity">
+    tools:context="org.secuso.aktivpause.activities.ExerciseActivity">
 
     <ImageButton
         android:id="@+id/button_playPause"
@@ -177,7 +177,7 @@
                 android:layout_marginRight="0dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:srcCompat="@drawable/breakreminder_0"
+                app:srcCompat="@drawable/image_placeholder"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
