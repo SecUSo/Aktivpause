@@ -1,13 +1,6 @@
-## Privacy Friendly Pausing Healthily
+## Aktivpause
 
-This application contains the functionality for a privacy friendly break reminder.
-It includes a countdown timer, the possibility to choose exercises and define exercise sets. 
-You can then choose different exercise sets, to complete during your break time. 
-This app belongs to the group of Privacy Friendly Apps. 
-
-## Motivation
-
-As it is part of the Privacy Friendly Apps developed by the SECUSO research group, it is optimized due to user's privacy. Further information can be found on https://secuso.org/pfa
+TODO
 
 ## Download and more Information
 
@@ -20,7 +13,7 @@ Target SDK: 27
 
 ## License
 
-Privacy Friendly Pausing Healthily is licensed under the GPLv3.
+Aktivpause is licensed under the GPLv3.
 Copyright (C) 2018  Christopher Beckmann
 
 This program is free software: you can redistribute it and/or modify
@@ -47,5 +40,3 @@ Authors (Github-Users): <br />
 - Christopher Beckmann (Kamuno) <br />
 - (Badric) <br />
 - (Lechendary) <br />
-
-Exercises by Eduardo Fontao <br />
