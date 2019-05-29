@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Aktive Pause</string>
+    <string name="app_name">Aktivepause</string>
 
     <!-- Tutorial -->
     <string name="slide1_heading">Willkommen</string>
