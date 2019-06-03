@@ -18,7 +18,7 @@ public final class ExerciseLocale {
     static {
         AVAILABLE_LOCALE.addAll(
                 Arrays.asList(
-                        "en", "de"
+                        "en"//, "de"
                 )
         );
     }
