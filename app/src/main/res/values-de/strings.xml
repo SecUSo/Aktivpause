@@ -41,6 +41,12 @@
     <string name="exercise_section_pelvis">Becken</string>
     <string name="exercise_section_spinal">Wirbel</string>
     <string name="exercise_section_torso">Torso</string>
+    <string name="exercise_section_shoulder">Schulter</string>
+    <string name="exercise_section_back">Rücken</string>
+    <string name="exercise_section_face">Gesicht</string>
+    <string name="exercise_section_body">Körper</string>
+    <string name="exercise_section_other">Sonstiges</string>
+
     <string name="activity_edit_no_empty_name">Bitte geben Sie einen Namen an.</string>
     <string name="activity_title_break_reminder">@string/app_name</string>
     <string name="dialog_add_exercise_set_title">Neues Übungsset hinzufügen</string>

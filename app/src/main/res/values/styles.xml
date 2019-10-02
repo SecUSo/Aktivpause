@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -11,10 +11,22 @@
         <item name="android:timePickerStyle">@style/TimePickerDialogStyle</item>
     </style>
 
-    <style name="AppTheme.Dialog" parent="Theme.MaterialComponents.Light.Dialog">
+    <style name="AppTheme.MaterialComponentTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:alertDialogTheme">@style/AppTheme.AlertDialog</item>
+        <item name="android:timePickerStyle">@style/TimePickerDialogStyle</item>
+    </style>
+
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Borderless.Colored">
     </style>
 
     <style name="AppTheme.AlertDialog" parent="AppTheme.Dialog">

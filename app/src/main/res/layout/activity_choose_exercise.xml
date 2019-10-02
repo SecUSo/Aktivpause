@@ -6,52 +6,58 @@
     android:layout_height="match_parent"
     tools:context="org.secuso.aktivpause.activities.ChooseExerciseActivity">
 
-    <android.support.design.chip.ChipGroup
-        android:id="@+id/layout_filter_buttons"
+    <HorizontalScrollView
+        android:id="@+id/h_scroll_filter_buttons"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:scrollbars="none"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        app:chipSpacing="4dp"
-        app:singleSelection="true"
-        app:singleLine="false"
-        app:layout_constraintEnd_toStartOf="@+id/exercise_set_time"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </android.support.design.chip.ChipGroup>
+        <android.support.design.chip.ChipGroup
+            android:id="@+id/layout_filter_buttons"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:chipSpacing="4dp"
+            app:singleSelection="true"
+            app:singleLine="true"/>
+
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/exercise_set_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:drawableStart="@drawable/ic_alarm_black"
         android:gravity="center"
         android:text="@string/exercise_time"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_filter_buttons"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h_scroll_filter_buttons" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/exercise_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="4dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_filter_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_set_time"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/layout_exercise_grid_item" />
 

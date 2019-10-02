@@ -72,6 +72,7 @@ public class ExerciseActivity extends AppCompatActivity implements android.suppo
     private TextView descriptionText;
     private TextView sectionText;
     private ImageView exerciseImage;
+    private TextView exerciseNameText;
     private ConstraintLayout exerciseContent;
     private ImageButton playButton;
     private ImageButton repeatButton;
@@ -169,6 +170,7 @@ public class ExerciseActivity extends AppCompatActivity implements android.suppo
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         timerText = (TextView) findViewById(R.id.timerText);
         executionText = (TextView) findViewById(R.id.execution);
+        exerciseNameText = (TextView) findViewById(R.id.exercise_name);
         descriptionText = (TextView) findViewById(R.id.description);
         exerciseImage = (ImageView) findViewById(R.id.exercise_image);
         sectionText = (TextView) findViewById(R.id.section);
@@ -606,6 +608,7 @@ public class ExerciseActivity extends AppCompatActivity implements android.suppo
 
         executionText.setText(e.getExecution());
         descriptionText.setText(e.getDescription());
+        exerciseNameText.setText(e.getName());
         sectionText.setText(e.getSection(this));
         Glide.with(this).load(e.getImageResIds(this)[currentExercisePart]).into(exerciseImage);
         exerciseImage.setOnClickListener(infoClickListener);

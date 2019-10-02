@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -82,7 +83,8 @@
             android:name="org.secuso.aktivpause.activities.ChooseExerciseActivity"
             android:label="@string/activity_title_choose_exercises"
             android:parentActivityName="org.secuso.aktivpause.activities.EditExerciseSetActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.MaterialComponentTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.secuso.aktivpause.activities.EditExerciseSetActivity" />

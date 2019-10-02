@@ -37,9 +37,12 @@ public final class ExerciseDialog {
         final TextView descriptionText = (TextView) v.findViewById(R.id.description);
         final ImageView exerciseImage = (ImageView) v.findViewById(R.id.exercise_image);
         final TextView sectionText = (TextView) v.findViewById(R.id.section);
+        final TextView exerciseName = (TextView) v.findViewById(R.id.name);
 
         if(executionText != null)
             executionText.setText(e.getExecution());
+        if(exerciseName != null)
+            exerciseName.setText(e.getName());
         if(descriptionText != null)
             descriptionText.setText(e.getDescription());
         if(sectionText != null)

@@ -99,6 +99,7 @@ public class EditExerciseSetActivity extends AppCompatActivity implements androi
         for(Exercise e : mAdapter.getExercises()) {
             ids.add(e.getId());
         }
+        mAdapter.setCheckedItems(ids);
         exerciseSetTimeText.setText(getString(R.string.exercise_time, mAdapter.getExerciseTimeString(ids)));
     }
 

@@ -20,7 +20,7 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/darkblue"
+        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -39,7 +39,7 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/darkblue"
+        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -59,7 +59,7 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/darkblue"
+        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -247,7 +247,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@color/middleblue"
+            app:cardBackgroundColor="@color/colorLightAccent"
             app:cardCornerRadius="12dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -265,6 +265,23 @@
                 android:text="Neck, Arms"
                 android:textColor="@color/white" />
         </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/exercise_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:text="Name of exercise"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/progressBarLayout"
+            app:layout_constraintTop_toBottomOf="@+id/section_card" />
 
 
     </android.support.constraint.ConstraintLayout>
