@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Aktivepause</string>
+    <string name="app_name">Aktivpause to Go</string>
+    <string name="app_name_short">Aktivpause</string>
 
     <!-- Tutorial -->
     <string name="slide1_heading">Willkommen</string>
-    <string name="slide1_text">Willkommen bei der Privacy Friendly Aktive Pause App. Diese App erinnert Sie daran, regelmäßig während der Arbeit Pausen einzulegen. Zusätzlich können Sie sich Übungen aussuchen, mit denen Sie Ihre Pause aktiv gestalten können.</string>
+    <string name="slide1_text">Willkommen bei der Privacy Friendly Aktivpause to Go App. Diese App erinnert Sie daran, regelmäßig während der Arbeit Pausen einzulegen. Zusätzlich können Sie sich Übungen aussuchen, mit denen Sie Ihre Pause aktiv gestalten können.</string>
 
     <string name="slide2_heading">Übungsset erstellen</string>
     <string name="slide2_text">
@@ -44,11 +45,10 @@
     <string name="exercise_section_shoulder">Schulter</string>
     <string name="exercise_section_back">Rücken</string>
     <string name="exercise_section_face">Gesicht</string>
-    <string name="exercise_section_body">Körper</string>
+    <string name="exercise_section_body">Ganzkörper</string>
     <string name="exercise_section_other">Sonstiges</string>
 
     <string name="activity_edit_no_empty_name">Bitte geben Sie einen Namen an.</string>
-    <string name="activity_title_break_reminder">@string/app_name</string>
     <string name="dialog_add_exercise_set_title">Neues Übungsset hinzufügen</string>
     <string name="title_activity_settings">Einstellungen</string>
     <string name="activity_edit_exercise_set_name_hint">Geben Sie einen Namen ein…</string>
@@ -93,7 +93,7 @@
     <!-- About -->
     <string name="about">Über</string>
     <string name="about_author">Autoren: </string>
-    <string name="about_graphics_by">Grafiken und Bilder:</string>
+    <string name="about_graphics_by">Grafiken und Beschreibungen:</string>
     <string name="about_author_contributors">%s und Mitwirkende</string>
     <string name="about_affiliation">In Zusammenarbeit mit</string>
     <string name="more_info">Mehr Information finden Sie hier:</string>

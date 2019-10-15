@@ -150,7 +150,7 @@ public class SQLiteHelper extends SQLiteAssetHelper {
                 "LEFT OUTER JOIN "+ExerciseLocalColumns.TABLE_NAME+" L\n" +
                 "\tON E."+ExerciseColumns._ID+" = L."+ExerciseLocalColumns.EXERCISE_ID+"\n" +
                 "WHERE ES."+ExerciseSetColumns._ID+" = ? AND L."+ExerciseLocalColumns.LANGUAGE+" = ?\n" +
-                "ORDER BY ESE."+ExerciseColumns._ID+" ASC";
+                "ORDER BY ESE.exercise_order ASC";
 
         return database.rawQuery(sql, new String[]{String.valueOf(setId), language});
     }
@@ -295,7 +295,6 @@ public class SQLiteHelper extends SQLiteAssetHelper {
                 sqlQuery.append("OR ");
             }
         }
-
 
         sqlQuery.append("ORDER BY E.");
         sqlQuery.append(ExerciseColumns._ID);

@@ -39,13 +39,16 @@ public class AboutActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         setupActionBar();
 
-        TextView t1 = (TextView) findViewById(R.id.githubURL);
+        TextView t1 = findViewById(R.id.githubURL);
         t1.setMovementMethod(LinkMovementMethod.getInstance());
 
-        TextView t2 = (TextView) findViewById(R.id.secusoWebsite);
+        TextView t2 = findViewById(R.id.secusoWebsite);
         t2.setMovementMethod(LinkMovementMethod.getInstance());
 
-        TextView authors = (TextView) findViewById(R.id.textFieldAuthorNames);
+        TextView t3 = findViewById(R.id.about_graphics_names);
+        t3.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView authors = findViewById(R.id.textFieldAuthorNames);
         authors.setText(getString(R.string.about_author_contributors, getString(R.string.about_author_names)));
 
         ((TextView)findViewById(R.id.textFieldVersionName)).setText(BuildConfig.VERSION_NAME);
