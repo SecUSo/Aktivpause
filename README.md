@@ -37,8 +37,11 @@ The app uses icons from [Google Design Material Icons](https://design.google.com
 
 ## Contributors
 
-Icons: <br />
+App Icon: <br />
 - Hangyan Chen<br/>
+
+Exercise Icons: <br />
+- KIT Sport Club 2010 e.V. <br />
 
 Authors (Github-Users): <br />
 - Christopher Beckmann (Kamuno) <br />
