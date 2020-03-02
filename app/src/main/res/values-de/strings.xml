@@ -170,5 +170,11 @@
     <string name="warning">Achtung</string>
     <string name="toast_not_enough_exercise_time">Die gewählte Übungszeit ist nicht ausreichend, um das gewählte Übungsset abzuschließen. Die Zeit wurde automatisch angepasst.</string>
     <string name="pref_schedule_random_exercise">Verwende zufällige Übungssets</string>
+    <string name="dialog_evaluation_later">Später</string>
+    <string name="dialog_evaluation_message">Vielen Dank, dass Sie die \"Aktivpause to Go\" App verwenden. Wir würden gerne eine Online-Befragung zur App durchführen und bitten um Ihre Mithilfe. Möchten Sie daran teilnehmen?\n\nDrücken auf \"Ja\" führt Sie zu folgender Website:\n<a href="https://soscisurvey.sport.kit.edu/aktivpause/">https://soscisurvey.sport.kit.edu/aktivpause/</a></string>
+    <string name="dialog_evaluation_no">Nicht noch mal Fragen</string>
+    <string name="dialog_evaluation_title">Online-Befragung</string>
+    <string name="dialog_evaluation_yes">Ja</string>
+    <string name="menu_display_evaluation_dialog">Online-Befragung</string>
 
 </resources>

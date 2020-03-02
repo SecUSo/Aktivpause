@@ -162,7 +162,12 @@
     <string name="warning">Warning</string>
     <string name="toast_not_enough_exercise_time">The currently selected exercise time is not sufficient to complete the chosen exercise set. The time has been adjusted.</string>
     <string name="pref_schedule_random_exercise">Use random exercise sets</string>
-
+    <string name="dialog_evaluation_title">Evaluation</string>
+    <string name="dialog_evaluation_message">Thank you for using the Aktivpause to Go app. We would like to hear your feedback via an online evaluation. The evaluation is in german. Would you like to participate?\n\nSeleting \"Yes\" will take you to the following website:\n<a href="https://soscisurvey.sport.kit.edu/aktivpause/">https://soscisurvey.sport.kit.edu/aktivpause/</a></string>
+    <string name="dialog_evaluation_later">Later</string>
+    <string name="dialog_evaluation_no">Don\'t show again</string>
+    <string name="dialog_evaluation_yes">Yes</string>
+    <string name="menu_display_evaluation_dialog">Online Evaluation</string>
 
 
 </resources>

@@ -9,8 +9,10 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.v4.app.ActivityCompat;
@@ -19,6 +21,9 @@ import android.support.v4.content.Loader;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.transition.TransitionManager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
@@ -83,6 +88,8 @@ public class TimerActivity extends BaseActivity implements android.support.v4.ap
     // Service
     private TimerService mTimerService = null;
 
+    private SharedPreferences pref;
+
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -127,7 +134,60 @@ public class TimerActivity extends BaseActivity implements android.support.v4.ap
 
         initResources();
         initAnimations();
+
+        if(pref.getBoolean("SHOW_EVALUATION", true)) {
+            showEvaluationDialog();
+        }
+
         getSupportLoaderManager().initLoader(0, null, this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_show_evaluation_dialog, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.action_evaluation) {
+            showEvaluationDialog();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showEvaluationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setPositiveButton(R.string.dialog_evaluation_yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Uri link = Uri.parse("https://soscisurvey.sport.kit.edu/aktivpause/");
+                Intent linkIntent = new Intent(Intent.ACTION_VIEW, link);
+                startActivity(linkIntent);
+                pref.edit().putBoolean("SHOW_EVALUATION", false).apply();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton(R.string.dialog_evaluation_no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                pref.edit().putBoolean("SHOW_EVALUATION", false).apply();
+                dialog.dismiss();
+            }
+        });
+        builder.setNeutralButton(R.string.dialog_evaluation_later, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                pref.edit().putBoolean("SHOW_EVALUATION", true).apply();
+                dialog.dismiss();
+            }
+        });
+        builder.setMessage(R.string.dialog_evaluation_message);
+        builder.setTitle(R.string.dialog_evaluation_title);
+        builder.create().show();
     }
 
     /**
@@ -205,7 +265,7 @@ public class TimerActivity extends BaseActivity implements android.support.v4.ap
     }
 
     private void initResources() {
-        final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
 
         exerciseSetAdapter = new ExerciseSetSpinnerAdapter(this, R.layout.layout_exercise_set, new LinkedList<ExerciseSet>());
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/menu_display_evaluation_dialog"
+        android:id="@+id/action_evaluation"
+        android:visible="true"
+        app:showAsAction="never"/>
+</menu>

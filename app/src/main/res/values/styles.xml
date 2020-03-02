@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -65,10 +65,9 @@
     </style>
 
     <style name="AppTheme.ActionBar" parent="AppTheme">
-        <item name="android:textColorPrimary">#fff</item>
-        <item name="android:textColorPrimaryInverse">#fff</item>
-        <item name="android:textColorSecondary">#fff</item>
-        <item name="actionMenuTextColor">#fff</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
     </style>
 
 </resources>
