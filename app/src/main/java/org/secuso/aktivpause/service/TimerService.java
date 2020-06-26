@@ -14,8 +14,8 @@ import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import org.secuso.aktivpause.R;
 import org.secuso.aktivpause.activities.ExerciseActivity;
@@ -112,7 +112,7 @@ public class TimerService extends Service {
         builder.setContentTitle(getString(R.string.app_name))
                 .setContentText(getString(R.string.take_a_break_now))
                 .setContentIntent(startExercises)
-                .setColor(ContextCompat.getColor(this, R.color.colorAccent))
+                .setColor(ContextCompat.getColor(this, R.color.colorDarkAccent))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setWhen(0)
                 .setOngoing(false)
@@ -129,8 +129,8 @@ public class TimerService extends Service {
             builder.addAction(0, getString(R.string.dismiss_and_dont_repeat), PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(ACTION_NOTIFICATION_CANCELED), FLAG_UPDATE_CURRENT));
         }
 
-        builder.addAction(R.drawable.ic_replay_black_48dp, getString(R.string.snooze), snoozeExercise);
-        builder.addAction(R.drawable.ic_play_arrow_black, getString(R.string.start), startExercises);
+        builder.addAction(R.drawable.ic_replay_48, getString(R.string.snooze), snoozeExercise);
+        builder.addAction(R.drawable.ic_play_arrow_48, getString(R.string.start), startExercises);
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
     }
@@ -330,7 +330,7 @@ public class TimerService extends Service {
         PendingIntent startExercises = PendingIntent.getActivity(this, 0, exerciseIntent, FLAG_CANCEL_CURRENT);
 
         builder.setContentText(time);
-        builder.setColor(ContextCompat.getColor(this, R.color.colorAccent));
+        builder.setColor(ContextCompat.getColor(this, R.color.colorDarkAccent));
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
         builder.setOnlyAlertOnce(true);
         builder.setSound(null);
@@ -343,19 +343,19 @@ public class TimerService extends Service {
         intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
         builder.setContentIntent(PendingIntent.getActivity(this, 0, intent, FLAG_UPDATE_CURRENT));
 
-        builder.addAction(R.drawable.ic_play_arrow_black, getString(R.string.start_break), startExercises);
+        builder.addAction(R.drawable.ic_play_arrow_48, getString(R.string.start_break), startExercises);
 
         Intent stopIntent = new Intent(this, TimerService.class);
         stopIntent.setAction(ACTION_STOP_TIMER);
-        builder.addAction(R.drawable.ic_replay_black_48dp, getString(R.string.stop), PendingIntent.getService(this, 0, stopIntent, FLAG_UPDATE_CURRENT));
+        builder.addAction(R.drawable.ic_replay_48, getString(R.string.stop), PendingIntent.getService(this, 0, stopIntent, FLAG_UPDATE_CURRENT));
 
         Intent pauseIntent = new Intent(this, TimerService.class);
         if(!isPaused()) {
             pauseIntent.setAction(ACTION_PAUSE_TIMER);
-            builder.addAction(R.drawable.ic_pause_black_48dp, getString(R.string.pause), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT));
+            builder.addAction(R.drawable.ic_pause_48, getString(R.string.pause), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT));
         } else {
             pauseIntent.setAction(ACTION_RESUME_TIMER);
-            builder.addAction(R.drawable.ic_play_arrow_black, getString(R.string.resume), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT));
+            builder.addAction(R.drawable.ic_play_arrow_48, getString(R.string.resume), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT));
         }
 
         return builder.build();

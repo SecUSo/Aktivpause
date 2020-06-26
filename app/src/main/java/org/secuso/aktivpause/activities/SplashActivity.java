@@ -2,10 +2,15 @@ package org.secuso.aktivpause.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.preference.PreferenceManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import org.secuso.aktivpause.activities.tutorial.FirstLaunchManager;
 import org.secuso.aktivpause.activities.tutorial.TutorialActivity;
+
+import static androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode;
 
 /**
  * @author yonjuni
