@@ -23,6 +23,10 @@
             android:icon="@drawable/ic_settings_24"
             android:title="@string/title_activity_settings" />
         <item
+            android:id="@+id/nav_theme"
+            android:icon="@drawable/ic_theme_24"
+            android:title="@string/title_theme" />
+        <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"
             android:title="@string/help" />

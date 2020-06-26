@@ -27,7 +27,9 @@ import org.secuso.aktivpause.activities.SettingsActivity;
 import org.secuso.aktivpause.activities.TimerActivity;
 import org.secuso.aktivpause.activities.tutorial.TutorialActivity;
 
+
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode;
 
 /**
  *
@@ -167,6 +169,29 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
                 //intent.putExtra( PreferenceActivity.EXTRA_SHOW_FRAGMENT, SettingsActivity.ExercisePreferenceFragment.class.getName() );
                 //intent.putExtra( PreferenceActivity.EXTRA_NO_HEADERS, true );
                 createBackStack(intent);
+                break;
+            case R.id.nav_theme:
+                new AlertDialog.Builder(this)
+                .setTitle(R.string.title_theme)
+                .setPositiveButton(R.string.follow_system, (dialog, which) -> {
+                    mSharedPreferences.edit().putInt("theme",AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM).apply();
+                    setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                    Intent thisIntent = new Intent(this, getClass());
+                    createBackStack(thisIntent);
+                })
+                .setNegativeButton(R.string.dark, (dialog, which) -> {
+                    mSharedPreferences.edit().putInt("theme",AppCompatDelegate.MODE_NIGHT_YES).apply();
+                    setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    Intent thisIntent = new Intent(this, getClass());
+                    createBackStack(thisIntent);
+                })
+                .setNeutralButton(R.string.light, (dialog, which) -> {
+                    mSharedPreferences.edit().putInt("theme",AppCompatDelegate.MODE_NIGHT_NO).apply();
+                    setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    Intent thisIntent = new Intent(this, getClass());
+                    createBackStack(thisIntent);
+                })
+                .show();
                 break;
             default:
         }
