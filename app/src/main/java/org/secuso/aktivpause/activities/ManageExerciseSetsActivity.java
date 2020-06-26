@@ -282,7 +282,7 @@ public class ManageExerciseSetsActivity extends BaseActivity implements LoaderMa
         }
 
         fabButton.setBackgroundTintList(ColorStateList.valueOf(ActivityCompat.getColor(this, R.color.red)));
-        fabButton.setImageResource(R.drawable.ic_delete_white);
+        fabButton.setImageResource(R.drawable.ic_delete_24);
     }
 
     public void disableDeleteMode() {
@@ -296,13 +296,13 @@ public class ManageExerciseSetsActivity extends BaseActivity implements LoaderMa
             toolbarDeleteIcon.setVisible(true);
         }
         if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAccent));
         }
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ActivityCompat.getColor(this, R.color.colorPrimary)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ActivityCompat.getColor(this, R.color.colorAccent)));
         getSupportActionBar().setTitle(R.string.activity_title_manage_exercise_sets);
 
         fabButton.setBackgroundTintList(fabDefaultBackgroundTint);
-        fabButton.setImageResource(R.drawable.ic_add_white_24dp);
+        fabButton.setImageResource(R.drawable.ic_add_24);
     }
 
     public static class AddExerciseSetDialogFragment extends DialogFragment {
