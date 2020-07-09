@@ -135,8 +135,8 @@ public class TimerActivity extends BaseActivity implements android.support.v4.ap
         initResources();
         initAnimations();
 
-        if(pref.getBoolean("SHOW_EVALUATION", true)) {
-            showEvaluationDialog();
+        if(pref.getBoolean("SHOW_EVALUATION", false)) {
+            //showEvaluationDialog();
         }
 
         getSupportLoaderManager().initLoader(0, null, this);
@@ -144,8 +144,8 @@ public class TimerActivity extends BaseActivity implements android.support.v4.ap
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_show_evaluation_dialog, menu);
+        //MenuInflater inflater = getMenuInflater();
+        //inflater.inflate(R.menu.menu_show_evaluation_dialog, menu);
         return true;
     }
 
