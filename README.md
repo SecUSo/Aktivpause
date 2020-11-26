@@ -41,7 +41,7 @@ App Icon: <br />
 - Hangyan Chen<br/>
 
 Exercise Icons: <br />
-- KIT Sport Club 2010 e.V. <br />
+- KIT - Institut für Sport und Sportwissenschaft <br />
 
 Authors (Github-Users): <br />
 - Christopher Beckmann (Kamuno) <br />
