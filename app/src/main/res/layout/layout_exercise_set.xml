@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,7 @@
     android:layout_margin="0dp"
     android:padding="0dp">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/exercise_set_card"
         android:longClickable="true"
         android:clickable="true"
@@ -20,12 +20,13 @@
         android:visibility="visible"
         app:cardCornerRadius="2dp"
         app:cardElevation="4dp"
+        android:backgroundTint="?backgroundColor"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -50,11 +51,11 @@
                 android:layout_marginTop="8dp"
                 android:background="?android:selectableItemBackgroundBorderless"
                 android:hapticFeedbackEnabled="true"
-                android:tint="@color/colorAccent"
+                android:tint="?colorAccent"
                 android:visibility="gone"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_mode_edit_black_24dp" />
+                app:srcCompat="@drawable/ic_edit_24" />
 
             <TextView
                 android:id="@+id/exercise_set_time_short"
@@ -63,9 +64,8 @@
                 android:layout_gravity="center"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:drawableStart="@drawable/ic_alarm_black"
+                android:drawableStart="@drawable/ic_alarm_24"
                 android:gravity="center"
-                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -91,7 +91,6 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/set_contains_no_exercises"
-                android:textColor="@color/black"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -117,7 +116,7 @@
 
             </LinearLayout>
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

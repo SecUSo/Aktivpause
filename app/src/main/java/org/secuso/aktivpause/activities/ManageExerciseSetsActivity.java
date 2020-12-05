@@ -8,21 +8,22 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TextInputEditText;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.AsyncTaskLoader;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.Loader;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.AsyncTaskLoader;
+import androidx.core.content.ContextCompat;
+import androidx.loader.content.Loader;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,7 +55,7 @@ import static android.view.View.VISIBLE;
  * @version 2.0
  * @see EditExerciseSetActivity
  */
-public class ManageExerciseSetsActivity extends BaseActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<List<ExerciseSet>> {
+public class ManageExerciseSetsActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<List<ExerciseSet>> {
 
     private static final String TAG = ManageExerciseSetsActivity.class.getSimpleName();
     private RecyclerView exerciseSetList;
@@ -281,7 +282,7 @@ public class ManageExerciseSetsActivity extends BaseActivity implements android.
         }
 
         fabButton.setBackgroundTintList(ColorStateList.valueOf(ActivityCompat.getColor(this, R.color.red)));
-        fabButton.setImageResource(R.drawable.ic_delete_white);
+        fabButton.setImageResource(R.drawable.ic_delete_24);
     }
 
     public void disableDeleteMode() {
@@ -295,13 +296,13 @@ public class ManageExerciseSetsActivity extends BaseActivity implements android.
             toolbarDeleteIcon.setVisible(true);
         }
         if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAccent));
         }
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ActivityCompat.getColor(this, R.color.colorPrimary)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ActivityCompat.getColor(this, R.color.colorAccent)));
         getSupportActionBar().setTitle(R.string.activity_title_manage_exercise_sets);
 
         fabButton.setBackgroundTintList(fabDefaultBackgroundTint);
-        fabButton.setImageResource(R.drawable.ic_add_white_24dp);
+        fabButton.setImageResource(R.drawable.ic_add_24);
     }
 
     public static class AddExerciseSetDialogFragment extends DialogFragment {

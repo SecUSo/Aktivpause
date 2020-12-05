@@ -4,11 +4,11 @@
     <group android:id="@+id/group_main" android:checkableBehavior="all">
         <item
             android:id="@+id/nav_timer"
-            android:icon="@drawable/ic_alarm_black"
+            android:icon="@drawable/ic_alarm_24"
             android:title="@string/app_name_short" />
         <item
             android:id="@+id/nav_manage_exercise_sets"
-            android:icon="@drawable/ic_list_black_24px"
+            android:icon="@drawable/ic_list_24"
             android:title="@string/activity_title_manage_exercise_sets" />
 
     </group>
@@ -20,8 +20,12 @@
             android:title="@string/title_activity_tutorial" />
         <item
             android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_settings_black_24dp"
+            android:icon="@drawable/ic_settings_24"
             android:title="@string/title_activity_settings" />
+        <item
+            android:id="@+id/nav_theme"
+            android:icon="@drawable/ic_theme_24"
+            android:title="@string/title_theme" />
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"

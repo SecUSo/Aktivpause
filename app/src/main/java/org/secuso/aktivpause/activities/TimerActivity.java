@@ -12,14 +12,15 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.AsyncTaskLoader;
-import android.support.v4.content.Loader;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.core.app.ActivityCompat;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.AsyncTaskLoader;
+import androidx.loader.content.Loader;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.transition.TransitionManager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -58,7 +59,7 @@ import static org.secuso.aktivpause.activities.tutorial.FirstLaunchManager.PAUSE
  * @version 2.0
  * @see TimerService
  */
-public class TimerActivity extends BaseActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<List<ExerciseSet>> {
+public class TimerActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<List<ExerciseSet>> {
     private static final String TAG = TimerActivity.class.getSimpleName();
 
     // UI
@@ -561,9 +562,9 @@ public class TimerActivity extends BaseActivity implements android.support.v4.ap
 
     private void updatePlayButton(boolean isRunning) {
         if(isRunning) {
-            playButton.setImageResource(R.drawable.ic_pause_black_48dp);
+            playButton.setImageResource(R.drawable.ic_pause_48);
         } else {
-            playButton.setImageResource(R.drawable.ic_play_arrow_black);
+            playButton.setImageResource(R.drawable.ic_play_arrow_48);
         }
     }
 

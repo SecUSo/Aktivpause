@@ -2,12 +2,12 @@ package org.secuso.aktivpause.activities.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.util.SortedList;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.SortedList;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +20,6 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 import org.secuso.aktivpause.R;
 import org.secuso.aktivpause.activities.helper.IExerciseTimeUpdateable;
-import org.secuso.aktivpause.activities.tutorial.FirstLaunchManager;
 import org.secuso.aktivpause.database.data.Exercise;
 import org.secuso.aktivpause.dialog.ExerciseDialog;
 
