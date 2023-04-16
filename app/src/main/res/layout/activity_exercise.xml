@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_content"
@@ -108,7 +108,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_update_black_40dp" />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/exercise_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -157,7 +157,7 @@
 
         </RelativeLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/exercise_image_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -201,7 +201,7 @@
                 app:srcCompat="@drawable/ic_about"
                 android:tint="@color/black"/>
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/execution_title"
@@ -241,7 +241,7 @@
             app:layout_constraintLeft_toLeftOf="@+id/description_title"
             app:layout_constraintTop_toBottomOf="@+id/description_title" />
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/section_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -264,7 +264,7 @@
                 android:gravity="center"
                 android:text="Neck, Arms"
                 android:textColor="@color/white" />
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/exercise_name"
@@ -284,9 +284,9 @@
             app:layout_constraintTop_toBottomOf="@+id/section_card" />
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bigProgressBarLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -339,6 +339,6 @@
             app:layout_constraintLeft_toLeftOf="@+id/progressBarBig"
             app:layout_constraintRight_toRightOf="@+id/progressBarBig"
             app:layout_constraintTop_toTopOf="@+id/progressBarBig" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
