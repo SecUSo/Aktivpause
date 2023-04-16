@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "org.secuso.aktivpause"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 33
         versionCode 9
         versionName "1.1.2"
         vectorDrawables.useSupportLibrary = true

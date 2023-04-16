@@ -27,7 +27,8 @@
         <activity
             android:name="org.secuso.aktivpause.activities.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/SplashTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -114,7 +115,8 @@
             android:enabled="true"
             android:exported="false" />
 
-        <receiver android:name="org.secuso.aktivpause.receivers.OnBootCompletedReceiver">
+        <receiver android:name="org.secuso.aktivpause.receivers.OnBootCompletedReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
