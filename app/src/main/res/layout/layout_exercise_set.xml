@@ -50,11 +50,11 @@
                 android:layout_marginTop="8dp"
                 android:background="?android:selectableItemBackgroundBorderless"
                 android:hapticFeedbackEnabled="true"
-                android:tint="@color/colorAccent"
                 android:visibility="gone"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_mode_edit_black_24dp" />
+                app:srcCompat="@drawable/ic_mode_edit_black_24dp"
+                app:tint="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/exercise_set_time_short"

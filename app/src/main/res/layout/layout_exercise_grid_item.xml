@@ -35,7 +35,7 @@
         app:layout_constraintRight_toRightOf="@+id/exercise_image"
         app:layout_constraintTop_toTopOf="@+id/exercise_image"
         app:srcCompat="@drawable/ic_about"
-        android:tint="@color/black"/>
+        app:tint="@color/black" />
 
     <CheckBox
         android:id="@+id/exercise_checkbox"

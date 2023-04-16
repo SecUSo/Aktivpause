@@ -20,11 +20,11 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_play_arrow_black" />
+        app:srcCompat="@drawable/ic_play_arrow_black"
+        app:tint="@color/colorPrimary" />
 
     <ImageButton
         android:id="@+id/button_next"
@@ -39,12 +39,12 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_skip_next_black_48dp"
-        app:layout_constraintHorizontal_bias="0.6666" />
+        app:layout_constraintHorizontal_bias="0.6666"
+        app:tint="@color/colorPrimary" />
 
     <ImageButton
         android:id="@+id/button_prev"
@@ -59,12 +59,12 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_skip_previous_black_48dp"
-        app:layout_constraintHorizontal_bias="0.3333" />
+        app:layout_constraintHorizontal_bias="0.3333"
+        app:tint="@color/colorPrimary" />
 
     <ImageButton
         android:id="@+id/button_repeat"
@@ -80,12 +80,12 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/middlegrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.8333"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_repeat_black_48dp" />
+        app:srcCompat="@drawable/ic_repeat_black_48dp"
+        app:tint="@color/middlegrey" />
 
     <ImageButton
         android:id="@+id/button_continuous"
@@ -101,12 +101,12 @@
         android:hapticFeedbackEnabled="true"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        android:tint="@color/middlegrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.1666"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_update_black_40dp" />
+        app:srcCompat="@drawable/ic_update_black_40dp"
+        app:tint="@color/middlegrey" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/exercise_layout"
@@ -199,7 +199,7 @@
                 app:layout_constraintRight_toRightOf="@+id/exercise_image"
                 app:layout_constraintTop_toTopOf="@+id/exercise_image"
                 app:srcCompat="@drawable/ic_about"
-                android:tint="@color/black"/>
+                app:tint="@color/black" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

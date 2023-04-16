@@ -288,11 +288,11 @@
                 android:background="?android:selectableItemBackgroundBorderless"
                 android:hapticFeedbackEnabled="true"
                 android:onClick="onClick"
-                android:tint="@color/darkblue"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:srcCompat="@drawable/ic_replay_black_48dp" />
+                app:srcCompat="@drawable/ic_replay_black_48dp"
+                app:tint="@color/darkblue" />
 
             <ImageButton
                 android:id="@+id/button_playPause"
@@ -305,12 +305,12 @@
                 android:hapticFeedbackEnabled="true"
                 android:onClick="onClick"
                 android:scaleType="fitXY"
-                android:tint="@color/darkblue"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:srcCompat="@drawable/ic_play_arrow_black" />
+                app:srcCompat="@drawable/ic_play_arrow_black"
+                app:tint="@color/darkblue" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
