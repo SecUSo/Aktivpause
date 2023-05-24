@@ -14,8 +14,8 @@ import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import org.secuso.aktivpause.R;
 import org.secuso.aktivpause.activities.ExerciseActivity;
@@ -105,8 +105,8 @@ public class TimerService extends Service {
         Intent exerciseIntent = new Intent(this, ExerciseActivity.class);
         exerciseIntent.putExtra("SCHEDULED", scheduled);
 
-        PendingIntent startExercises = PendingIntent.getActivity(this, 0, exerciseIntent, FLAG_CANCEL_CURRENT);
-        PendingIntent snoozeExercise = PendingIntent.getService(this, 0, snoozeIntent, FLAG_UPDATE_CURRENT);
+        PendingIntent startExercises = PendingIntent.getActivity(this, 0, exerciseIntent, FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        PendingIntent snoozeExercise = PendingIntent.getService(this, 0, snoozeIntent, FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "timer_done");
         builder.setContentTitle(getString(R.string.app_name))
@@ -122,11 +122,11 @@ public class TimerService extends Service {
                 .setVibrate(new long[] { 0, 1000, 1000, 1000, 1000, 1000, 1000 })
                 .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                 .setOnlyAlertOnce(false)
-                .setDeleteIntent(PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(ACTION_NOTIFICATION_DELETED), FLAG_UPDATE_CURRENT));
+                .setDeleteIntent(PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(ACTION_NOTIFICATION_DELETED), FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         if(pref.getBoolean(PREF_EXERCISE_CONTINUOUS, false)) {
-            builder.addAction(0, getString(R.string.dismiss_and_dont_repeat), PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(ACTION_NOTIFICATION_CANCELED), FLAG_UPDATE_CURRENT));
+            builder.addAction(0, getString(R.string.dismiss_and_dont_repeat), PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(ACTION_NOTIFICATION_CANCELED), FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
         }
 
         builder.addAction(R.drawable.ic_replay_black_48dp, getString(R.string.snooze), snoozeExercise);
@@ -327,7 +327,7 @@ public class TimerService extends Service {
 
         Intent exerciseIntent = new Intent(this, ExerciseActivity.class);
         exerciseIntent.putExtra("SCHEDULED", scheduled);
-        PendingIntent startExercises = PendingIntent.getActivity(this, 0, exerciseIntent, FLAG_CANCEL_CURRENT);
+        PendingIntent startExercises = PendingIntent.getActivity(this, 0, exerciseIntent, FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         builder.setContentText(time);
         builder.setColor(ContextCompat.getColor(this, R.color.colorAccent));
@@ -341,21 +341,21 @@ public class TimerService extends Service {
 
         Intent intent = new Intent(this, TimerActivity.class);
         intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
-        builder.setContentIntent(PendingIntent.getActivity(this, 0, intent, FLAG_UPDATE_CURRENT));
+        builder.setContentIntent(PendingIntent.getActivity(this, 0, intent, FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
 
         builder.addAction(R.drawable.ic_play_arrow_black, getString(R.string.start_break), startExercises);
 
         Intent stopIntent = new Intent(this, TimerService.class);
         stopIntent.setAction(ACTION_STOP_TIMER);
-        builder.addAction(R.drawable.ic_replay_black_48dp, getString(R.string.stop), PendingIntent.getService(this, 0, stopIntent, FLAG_UPDATE_CURRENT));
+        builder.addAction(R.drawable.ic_replay_black_48dp, getString(R.string.stop), PendingIntent.getService(this, 0, stopIntent, FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
 
         Intent pauseIntent = new Intent(this, TimerService.class);
         if(!isPaused()) {
             pauseIntent.setAction(ACTION_PAUSE_TIMER);
-            builder.addAction(R.drawable.ic_pause_black_48dp, getString(R.string.pause), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT));
+            builder.addAction(R.drawable.ic_pause_black_48dp, getString(R.string.pause), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
         } else {
             pauseIntent.setAction(ACTION_RESUME_TIMER);
-            builder.addAction(R.drawable.ic_play_arrow_black, getString(R.string.resume), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT));
+            builder.addAction(R.drawable.ic_play_arrow_black, getString(R.string.resume), PendingIntent.getService(this, 0, pauseIntent, FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
         }
 
         return builder.build();

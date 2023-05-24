@@ -2,7 +2,7 @@ package org.secuso.aktivpause.database.data;
 
 
 import android.content.Context;
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 
 import org.secuso.aktivpause.exercises.ExerciseSections;
 
