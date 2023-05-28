@@ -9,8 +9,8 @@ android {
         applicationId "org.secuso.aktivpause"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 9
-        versionName "1.1.2"
+        versionCode 10
+        versionName "1.2.0"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
