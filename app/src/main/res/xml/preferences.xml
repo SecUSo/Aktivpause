@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings_appearance_heading">
+        <ListPreference
+            android:key="settings_day_night_theme"
+            android:title="@string/select_day_night_theme"
+            android:summary="%s"
+            android:defaultValue="-1"
+            android:entries="@array/array_day_night_theme"
+            android:entryValues="@array/array_day_night_theme_values"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_exercise">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_keep_screen_on_during_exercise"
+            android:title="@string/pref_keep_screen_on_during_exercise" />
+
+        <EditTextPreference
+            android:defaultValue="30"
+            android:inputType="number"
+            android:numeric="integer"
+            android:maxLength="2"
+            android:key="pref_exercise_time"
+            android:title="@string/pref_exercise_time"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_exercise_continuous"
+            android:title="@string/pref_exercise_continuous"
+            android:summary="@string/pref_exercise_continuous_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_default_exercise_sets">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_hide_default_exercise_sets"
+            android:title="@string/pref_hide_default_exercise_sets" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_schedule">
+
+        <SwitchPreference
+            android:title="@string/pref_schedule_exercise_switch"
+            android:defaultValue="false"
+            android:key="pref_schedule_exercise"/>
+
+        <!-- <EditTextPreference
+            android:defaultValue="30"
+            android:inputType="number"
+            android:numeric="integer"
+            android:maxLength="2"
+            android:dependency="pref_schedule_exercise"
+            android:key="pref_schedule_exercise_time"
+            android:title="@string/pref_schedule_exercise_time"/> -->
+
+        <org.secuso.aktivpause.preferences.TimePreference
+            android:dependency="pref_schedule_exercise"
+            android:defaultValue="32400000"
+            android:key="pref_schedule_exercise_time"
+            android:title="@string/pref_schedule_exercise_time"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:dependency="pref_schedule_exercise"
+            android:title="@string/pref_schedule_exercise_daystrigger"
+            android:key="pref_schedule_exercise_daystrigger"/>
+
+        <MultiSelectListPreference
+            android:dependency="pref_schedule_exercise_daystrigger"
+            android:entries="@array/pref_schedule_exercise_days"
+            android:entryValues="@array/pref_schedule_exercise_days_entries"
+            android:title="@string/pref_schedule_exercise_days"
+            android:key="pref_schedule_exercise_days"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:dependency="pref_schedule_exercise"
+            android:title="@string/pref_schedule_random_exercise"
+            android:key="pref_schedule_random_exercise"/>
+
+
+    </PreferenceCategory>
+</PreferenceScreen>

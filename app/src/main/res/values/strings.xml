@@ -169,5 +169,12 @@
     <string name="dialog_evaluation_yes">Yes</string>
     <string name="menu_display_evaluation_dialog">Online Evaluation</string>
 
+    <string name="settings_appearance_heading">Appearance</string>
+    <string-array name="array_day_night_theme">
+        <item>System</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string name="select_day_night_theme">Design</string>
 
 </resources>
