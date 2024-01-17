@@ -29,6 +29,10 @@ Further development requires Android Studio, we recommend to use the latest vers
 Mininum SDK: 21<br />
 Target SDK: 28 
 
+## Data Backup
+
+You can use the [Privacy Friendly Backup app](https://github.com/SecUSo/privacy-friendly-backup) to backup and restore this application's data. This can also be used to migrate your data to a new phone.
+
 ## License
 
 Aktivpause is licensed under the GPLv3.
