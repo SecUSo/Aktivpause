@@ -1,7 +1,6 @@
-Die Aktivpause-App ermöglicht es Ihnen, selbstständig Bewegungspausen durchzuführen und so ganz individuell eine gezielte Auszeit in Ihren Arbeitsalltag zu integrieren. Wann, wo und wie lange Sie aktive Pausen machen, können Sie somit für sich persönlich entscheiden. Das breite Übungsspektrum stammt aus dem etablierten Aktivpause-Programm am KIT und wurde von Wissenschaftler*innen am Institut für Sport und Sportwissenschaft des KIT zusammengestellt.
-Folgende Features bietet die Aktivpause-App:
-1. Auswahl und Erstellung von Übungssets: Aus den vorhandenen Übungen lassen sich individuelle Übungssets zusammenstellen, die für die Pausen ausgewählt werden können. Es stehen auch vordefinierte Übungssets zur Verfügung, die Ihnen den Start erleichtern.
-2. Das Übungsspektrum reicht von Übungen zur Aktivierung des Herz-Kreislauf-Systems über Dehnungs- und Kräftigungs- bis hin zu Entspannungsübungen.
-3. Mit der Filterfunktion können Sie gezielt Übungen nach Körperregion auswählen und etwaige Beschwerden vorbeugen.
-4. Pausen-Timer: Über das Hauptmenü lässt sich festlegen, wann und wie lange Sie Ihre Aktivpause durchführen möchten. Sobald es an der Zeit ist, bekommen Sie eine Benachrichtigung. Sie haben dann die Möglichkeit, die Aktivpause zu starten oder zu verschieben.
-5. Integrieren Sie die Aktivpause in Ihren Alltag: Sie können mit einem selbst bestimmten Zeitplan festlegen, um wie viel Uhr und an welchem Tag Sie automatisch an die Pause erinnert werden.
+
+
+Kontaktieren Sie uns gerne   ber:
+Twitter - @SECUSOResearch https://twitter.com/secusoresearc)
+Mastodon - @SECUSO_Research@baw  .social https://xn--baw-joa.social/@SECUSO_Research/
+Offene Stellen - https://secuso.aifb.kit.edu/83_1557.php
