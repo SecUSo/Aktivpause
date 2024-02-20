@@ -5,3 +5,9 @@ Folgende Features bietet die Aktivpause-App:
 3. Mit der Filterfunktion können Sie gezielt Übungen nach Körperregion auswählen und etwaige Beschwerden vorbeugen.
 4. Pausen-Timer: Über das Hauptmenü lässt sich festlegen, wann und wie lange Sie Ihre Aktivpause durchführen möchten. Sobald es an der Zeit ist, bekommen Sie eine Benachrichtigung. Sie haben dann die Möglichkeit, die Aktivpause zu starten oder zu verschieben.
 5. Integrieren Sie die Aktivpause in Ihren Alltag: Sie können mit einem selbst bestimmten Zeitplan festlegen, um wie viel Uhr und an welchem Tag Sie automatisch an die Pause erinnert werden.
+
+
+Kontaktieren Sie uns gerne über:
+Twitter - @SECUSOResearch https://twitter.com/secusoresearc)
+Mastodon - @SECUSO_Research@bawü.social https://xn--baw-joa.social/@SECUSO_Research/
+Offene Stellen - https://secuso.aifb.kit.edu/83_1557.php
