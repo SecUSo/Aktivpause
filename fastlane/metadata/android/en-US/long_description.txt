@@ -1,5 +1,12 @@
 
+The following features are provided by the app:
+1. Creation and Choice of exercise sets: Individual exercise sets can be created. This makes it easier to complete your favorite exercises faster. The exercise sets can then be chosen to perform during breaks. There are also predefined exercise sets to ease the start into the app.
+2. There are a wide variety of exercises: Exercises to activate the cardiovascular system, stretching, strength, and relaxation exercises.
+3. The filter feature lets you easily choose exercises for specific body regions that may help you prevent potential complaints.
+4. Pause timer: You can choose work and break intervals via the main menu. After the work time is up you will be reminded to take a break. You then are able to start, skip, or postpone the break.
+5. Integrate the Aktivpause break into your daily routine. You can schedule breaks to start at specific times and days, so you don’t have to think about starting the timer manually to be reminded to take breaks.
 
+Feel free to contact us via:
 Twitter - @SECUSOResearch https://twitter.com/secusoresearch
-Mastodon - @SECUSO_Research@baw  .social https://xn--baw-joa.social/@SECUSO_Research/
+Mastodon - @SECUSO_Research@bawü.social https://xn--baw-joa.social/@SECUSO_Research/
 Job opening - https://secuso.aifb.kit.edu/english/Job_Offers_1557.php
