@@ -1,3 +1,4 @@
+The Aktivpause to Go App allows you to integrate planned breaks into your daily work. You can decide when, where and for how long you want to take breaks and this app will help shape your break in a healthy way. It offers a wide variety of exercises from the well-established Aktivpause program at KIT and was developed by Scientists at the Institute of Sports and Sports Science (IfSS) of KIT. Exercises are currently only provided in german.
 
 The following features are provided by the app:
 1. Creation and Choice of exercise sets: Individual exercise sets can be created. This makes it easier to complete your favorite exercises faster. The exercise sets can then be chosen to perform during breaks. There are also predefined exercise sets to ease the start into the app.
