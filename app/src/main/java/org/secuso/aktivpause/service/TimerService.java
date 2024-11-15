@@ -9,12 +9,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.ServiceInfo;
 import android.os.Binder;
 import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.ServiceCompat;
 import androidx.core.content.ContextCompat;
 
 import org.secuso.aktivpause.R;
@@ -33,6 +35,7 @@ import static org.secuso.aktivpause.activities.tutorial.FirstLaunchManager.WORK_
 import static org.secuso.aktivpause.receivers.NotificationCancelReceiver.ACTION_NOTIFICATION_CANCELED;
 import static org.secuso.aktivpause.receivers.NotificationDeletedReceiver.ACTION_NOTIFICATION_DELETED;
 
+import kotlin.Unit;
 /**
  * The main timer service. It handles the work timer and sends updates to the notification and the {@link TimerActivity}.
  * When the work time is up, an alarm will fire to start the exercises.
@@ -139,9 +142,10 @@ public class TimerService extends Service {
     public void onCreate() {
         super.onCreate();
 
+
         registerReceiver(timerReceiver, new IntentFilter(TIMER_BROADCAST));
-        registerReceiver(notificationDeletedReceiver, new IntentFilter(ACTION_NOTIFICATION_DELETED));
-        registerReceiver(notificationPreferenceChangedReceiver, new IntentFilter(ACTION_NOTIFICATION_CANCELED));
+        ContextCompat.registerReceiver(this, notificationDeletedReceiver, new IntentFilter(ACTION_NOTIFICATION_DELETED), ContextCompat.RECEIVER_NOT_EXPORTED);
+        ContextCompat.registerReceiver(this, notificationPreferenceChangedReceiver, new IntentFilter(ACTION_NOTIFICATION_CANCELED),  ContextCompat.RECEIVER_NOT_EXPORTED);
     }
 
     @Override
@@ -363,7 +367,7 @@ public class TimerService extends Service {
 
     private void updateNotification() {
         if(isRunning() || isPaused()) {
-            startForeground(NOTIFICATION_ID, buildNotification());
+            ServiceCompat.startForeground(this, NOTIFICATION_ID, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
         } else {
             stopForeground(true);
         }
