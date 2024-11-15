@@ -3,14 +3,14 @@ apply plugin: 'kotlin-android'
 
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "org.secuso.aktivpause"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 10
-        versionName "1.2.0"
+        versionName "1.2.1"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
