@@ -3,8 +3,9 @@ apply plugin: 'kotlin-android'
 
 
 android {
-    compileSdkVersion 34
+    compileSdk 34
 
+    namespace 'org.secuso.aktivpause'
     defaultConfig {
         applicationId "org.secuso.aktivpause"
         minSdkVersion 21
@@ -19,12 +20,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        buildConfig true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    namespace 'org.secuso.aktivpause'
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+    kotlin {
+        jvmToolchain(17)
+    }
     lint {
+        lintConfig = file("lint.xml")
         abortOnError false
         checkReleaseBuilds false
     }
