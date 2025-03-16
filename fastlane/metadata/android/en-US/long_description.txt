@@ -8,6 +8,6 @@ The following features are provided by the app:
 5. Integrate the Aktivpause break into your daily routine. You can schedule breaks to start at specific times and days, so you don’t have to think about starting the timer manually to be reminded to take breaks.
 
 Feel free to contact us via:
-Twitter - @SECUSOResearch https://twitter.com/secusoresearch
+Bluesky - @secusoresearch.bsky.social https://bsky.app/profile/secusoresearch.bsky.social
 Mastodon - @SECUSO_Research@bawü.social https://xn--baw-joa.social/@SECUSO_Research/
-Job opening - https://secuso.aifb.kit.edu/english/Job_Offers_1557.php
+Job opening - https://secuso.aifb.kit.edu/english/Job_Offers.php
