@@ -12,7 +12,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.app.ActivityCompat;
@@ -117,12 +116,9 @@ public class TimerActivity extends BaseActivity implements LoaderManager.LoaderC
             boolean isRunning = intent.getBooleanExtra("isRunning", false);
             boolean isPaused = intent.getBooleanExtra("isPaused", false);
 
-            //if(intent.getBooleanExtra("done" ,false)) {
-                // TODO: show a dialog here to start the exercise?
-            //}
-
-            //Log.d(TAG, millisUntilDone + "/" + initialDuration + " (" + (isRunning ? "Running" : "") + (isPaused ? "Paused" : "") + (!isRunning && !isPaused ?  "Stopped" : "") + ")");
-
+            if (millisUntilDone <= 0) {
+                startActivity(new Intent(TimerActivity.this, ExerciseActivity.class));
+            }
             updateUI(isRunning, isPaused, initialDuration, millisUntilDone);
         }
     };
