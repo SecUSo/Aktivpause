@@ -16,10 +16,6 @@
 
 The Aktivpause to Go App allows you to integrate planned breaks into your daily work. You can decide when, where and for how long you want to take breaks and this app will help shape your break in a healthy way. It offers a wide variety of exercises from the well-established Aktivpause program at KIT and was developed by Scientists at the Institute of Sports and Sports Science (IfSS) of KIT. Exercises are currently only provided in german.
 
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
-     alt="Get it on Google Play"
-     height="80">](https://play.google.com/store/apps/details?id=org.secuso.aktivpause)
-
 ## Download and more Information
 
 Further development requires Android Studio, we recommend to use the latest version.
