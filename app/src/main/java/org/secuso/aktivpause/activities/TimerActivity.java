@@ -32,6 +32,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.secuso.aktivpause.GoodbyeGoogleHelperKt;
 import org.secuso.aktivpause.activities.tutorial.FirstLaunchManager;
 import org.secuso.aktivpause.exercises.ExerciseLocale;
 import org.secuso.aktivpause.R;
@@ -136,6 +137,7 @@ public class TimerActivity extends BaseActivity implements LoaderManager.LoaderC
         }
 
         getSupportLoaderManager().initLoader(0, null, this);
+        GoodbyeGoogleHelperKt.checkGoodbyeGoogle(this, getLayoutInflater());
     }
 
     @Override
