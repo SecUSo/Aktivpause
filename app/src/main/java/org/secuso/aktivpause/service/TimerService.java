@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ServiceInfo;
 import android.os.Binder;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -56,6 +57,9 @@ public class TimerService extends Service {
 
     private static final int UPDATE_INTERVAL = 125;
     public static final int NOTIFICATION_ID = 31337;
+    private NotificationCompat.Builder notiBuilder = null;
+    private NotificationManager notiManager = null;
+    private boolean isAppInBackground = false;
 
     private TimerServiceBinder mBinder = new TimerServiceBinder();
     private CountDownTimer mTimer;
@@ -366,12 +370,49 @@ public class TimerService extends Service {
     }
 
     private void updateNotification() {
-        if(isRunning() || isPaused()) {
-            ServiceCompat.startForeground(this, NOTIFICATION_ID, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
-        } else {
-            stopForeground(true);
+        if(isAppInBackground) {
+            Notification notification = buildNotification();
+            notiManager.notify(NOTIFICATION_ID, notification);
+        }
+        else if(notiManager != null) {
+            notiManager.cancel(NOTIFICATION_ID);
         }
     }
+
+    /**
+     * Check if the app is in the background.
+     * If so, start a notification showing the current timer.
+     *
+     * @param isInBackground Sets global flag to determine whether the app is in the background
+     */
+    public void setIsAppInBackground(boolean isInBackground){
+        this.isAppInBackground = isInBackground;
+
+        //Execute after short delay to prevent short notification popup if workoutActivity is closed
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                updateNotification();
+            }
+        }, 700);
+    }
+
+    /**
+     * Cancel the notification when workout activity is destroyed
+     */
+    public void workoutClosed(){
+        this.isAppInBackground = false;
+        notiManager.cancel(NOTIFICATION_ID);
+    }
+
+//    private void updateNotification() {
+//        if(isRunning() || isPaused()) {
+//            ServiceCompat.startForeground(this, NOTIFICATION_ID, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
+//        } else {
+//            stopForeground(true);
+//        }
+//    }
 
     @Override
     public IBinder onBind(Intent intent) {

@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
+import androidx.core.app.AlarmManagerCompat;
 import androidx.legacy.content.WakefulBroadcastReceiver;
 
 import org.secuso.aktivpause.service.TimerService;
@@ -79,7 +80,7 @@ public class TimerSchedulerReceiver extends WakefulBroadcastReceiver {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Intent automaticTimerIntent = new Intent(context, TimerSchedulerReceiver.class);
-        PendingIntent automaticTimerPending = PendingIntent.getBroadcast(context, 0, automaticTimerIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent automaticTimerPending = PendingIntent.getBroadcast(context, 0, automaticTimerIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(timestamp);
@@ -143,12 +144,8 @@ public class TimerSchedulerReceiver extends WakefulBroadcastReceiver {
             }
         }
 
-        if(done || !scheduleExerciseDaysEnabled) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), automaticTimerPending);
-            } else {
-                alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), automaticTimerPending);
-            }
+        if((done || !scheduleExerciseDaysEnabled)) {
+            AlarmManagerCompat.setExactAndAllowWhileIdle(alarmManager, AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), automaticTimerPending);
         }
     }
 
