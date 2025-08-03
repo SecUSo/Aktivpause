@@ -2,9 +2,11 @@ package org.secuso.aktivpause.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -12,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
@@ -117,14 +120,39 @@ public class ExerciseActivity extends AppCompatActivity implements LoaderManager
     private SharedPreferences pref;
     private Handler mHandler;
 
+    private TimerService timerService = null;
+    private boolean serviceBound = false;
+
+    /**
+     * Defines callbacks for service binding, passed to bindService()
+     * Performs an initial GUI update when connection is established.
+     **/
+    private final ServiceConnection serviceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className, IBinder service) {
+            TimerService.TimerServiceBinder binder = (TimerService.TimerServiceBinder) service;
+            timerService = binder.getService();
+            serviceBound = true;
+
+            timerService.setIsAppInBackground(false);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            serviceBound = false;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
 
         Intent stopTimer = new Intent(this, TimerService.class);
-        stopTimer.setAction(ACTION_STOP_TIMER);
-        startService(stopTimer);
+        bindService(stopTimer, serviceConnection, Context.BIND_AUTO_CREATE);
+//        stopTimer.setAction(ACTION_STOP_TIMER);
+//        startService(stopTimer);
 
         mHandler = new Handler();
 
@@ -327,6 +355,10 @@ public class ExerciseActivity extends AppCompatActivity implements LoaderManager
         super.onResume();
         isActivityVisible = true;
 
+        if (timerService != null) {
+            timerService.setIsAppInBackground(false);
+        }
+
         if (isBreakFinished) {
             showEndDialog(this);
         }
@@ -341,6 +373,10 @@ public class ExerciseActivity extends AppCompatActivity implements LoaderManager
         super.onPause();
         isActivityVisible = false;
 
+        if (timerService != null) {
+            timerService.setIsAppInBackground(true);
+        }
+
         if(isBreakFinished) {
             // TODO: Either start a short Timer to see if the user comes back - or start the next work time rand finish this activity
             // TODO: for now we just finish
@@ -348,6 +384,28 @@ public class ExerciseActivity extends AppCompatActivity implements LoaderManager
         }
 
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
+    /**
+     * Stop the notification when activity is destroyed
+     */
+    @Override
+    public void onDestroy() {
+        if (timerService != null) {
+            timerService.workoutClosed();
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        // Unbind from the service
+        if (serviceBound) {
+            unbindService(serviceConnection);
+            serviceBound = false;
+        }
     }
 
     @Override
