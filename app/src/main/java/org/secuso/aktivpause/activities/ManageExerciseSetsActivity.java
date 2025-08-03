@@ -34,6 +34,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.secuso.aktivpause.GoodbyeGoogleHelperKt;
 import org.secuso.aktivpause.activities.tutorial.FirstLaunchManager;
 import org.secuso.aktivpause.exercises.ExerciseLocale;
 import org.secuso.aktivpause.R;
@@ -76,6 +77,7 @@ public class ManageExerciseSetsActivity extends BaseActivity implements LoaderMa
 
         initResources();
         getSupportLoaderManager().initLoader(0, null, this);
+        GoodbyeGoogleHelperKt.checkGoodbyeGoogle(this, getLayoutInflater());
     }
 
     private void initResources() {
