@@ -144,7 +144,7 @@ public class TimerSchedulerReceiver extends WakefulBroadcastReceiver {
             }
         }
 
-        if((done || !scheduleExerciseDaysEnabled)) {
+        if((done || !scheduleExerciseDaysEnabled) && (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) || alarmManager.canScheduleExactAlarms()) {
             AlarmManagerCompat.setExactAndAllowWhileIdle(alarmManager, AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), automaticTimerPending);
         }
     }
